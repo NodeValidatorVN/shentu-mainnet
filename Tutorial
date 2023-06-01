@@ -41,4 +41,15 @@ Kiểm tra phiên bản:
 
     shentud init node --chain-id shentu-2.2
     
+Sheet:
+
+    shentud keys add wallet
+    
+    shentud keys add wallet --recover
+    
+    shentud tx slashing unjail --from wallet --chain-id shentu-2.2 --gas-prices 0.001uctk --gas-adjustment 1.5 --gas auto -y
+    
+    shentud tx distribution withdraw-rewards $(shentud keys show wallet --bech val -a) --commission --from wallet --chain-id shentu-2.2 --gas-prices 0.001uctk --gas-adjustment 1.5 --gas auto -y 
+    
+    shentud tx staking delegate $(shentud keys show wallet --bech val -a) 1000000uctk --from wallet --chain-id shentu-2.2 --gas-prices 0.001uctk --gas-adjustment 1.5 --gas auto -y 
     
